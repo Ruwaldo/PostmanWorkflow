@@ -15,3 +15,9 @@ jobs:
       - name: Run API tests
         run: |
           postman collection run "44662855-0ccff1a9-344d-44cb-9196-5249f64c6593" -r html
+         
+      - name: Upload HTML report as GitHub artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: postman-html-report
+          path: postman-cli-reports/*.html
